@@ -17,8 +17,6 @@ function playRound() {
         console.log("You won this round!")
     }
     else if (playerSelection == computerSelection) {
-        playerScore += 1;
-        computerScore += 1;
         console.log("It's a tie!");
     }
     else if ((computerSelection == "paper" && playerSelection == "rock") || (computerSelection == "scissors" && playerSelection == "paper") || (computerSelection == "rock" && playerSelection == "scissors")) {
@@ -30,13 +28,15 @@ function playRound() {
     }
     }
 
-    if (computerScore == 5) {
-        console.log("Computer wins! You lost :(")
-    }
-    else if (playerScore == 5) {
-        console.log("You won! Congrats!")
-    }
+ 
 
 while ((playerScore < 5) && (computerScore < 5)) {
     playRound();
+}
+
+if (computerScore == 5) {
+    console.log("Computer wins! You lost :(")
+}
+else if (playerScore == 5) {
+    console.log("You won! Congrats!")
 }
